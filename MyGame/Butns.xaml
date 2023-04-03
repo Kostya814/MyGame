@@ -1,0 +1,42 @@
+﻿<StackPanel x:Class="MyGame.Butns"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyGame"
+        mc:Ignorable="d"
+            Name="here"
+        Height="100" Width="800" Orientation="Horizontal">
+    <TextBlock 
+        Height="100" 
+        Width="250"
+        
+        TextWrapping="Wrap"
+        Background="Blue"
+        Foreground="White" 
+        Text="{Binding Source=Name}" 
+        FontSize="20"/>
+    
+    <Button  Content="100" 
+             Width="100" 
+             FontSize="20"
+             Background="White"
+             Click="Click100"/>
+    <Button  Content="200" 
+             Width="100" 
+             FontSize="20"
+             Background="White"/>
+    <Button  Content="300"  
+             Width="100"
+             FontSize="20"
+             Background="White"/>
+    <Button  Content="400"  
+             Width="100"
+             FontSize="20"
+             Background="White"/>
+    <Button  Content="500"  
+             Width="100"
+             FontSize="20"
+             Background="White"/>
+
+</StackPanel>
