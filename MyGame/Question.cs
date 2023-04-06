@@ -11,6 +11,7 @@ namespace MyGame
         private string _question;
         private string _answer;
         private bool _isAnswered;
+        private int _skores;
 
         private Category _category;
         public Question(string question, string answer,Category category)
@@ -18,6 +19,7 @@ namespace MyGame
             _question = question;
             _answer = answer;
             _category = category;
+            _skores = 100;
             _isAnswered = false;
         }
         public Category Category 
@@ -37,6 +39,11 @@ namespace MyGame
         public override string ToString()
         {
             return $"Вопрос: {_question} " + $"Ответ: {_answer}";
+        }
+        public int Skores
+        { 
+            get=> _skores;
+            set => _skores = value;
         }
     }
 }

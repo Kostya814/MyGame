@@ -75,9 +75,6 @@ namespace MyGame
             list3 = Cat.Where(u => u.Category.Name == "Название предмета").ToList();
             list4 = Cat.Where(u => u.Category.Name == "О детях").ToList();
             list5 = Cat.Where(u => u.Category.Name == "О Нарковтиках").ToList();
-
-
-
         }
 
     }

@@ -9,7 +9,7 @@ namespace MyGame
     /// </summary>
     public partial class Butns : StackPanel
     {
-        public MainWindow parent { get; set; };
+        public MainWindow parent { get; set; }
         public Butns()
         {
             
@@ -23,7 +23,7 @@ namespace MyGame
             int point = Convert.ToInt32(btn.Content);
             MessageBox.Show(btn.DataContext.ToString());
 
-            BtnsListView.ItemsSource = твой_Список;
+           
                  
         }
        
