@@ -6,37 +6,50 @@
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
             Name="here"
-        Height="100" Width="800" Orientation="Horizontal">
+        Height="100" Width="750" Orientation="Horizontal">
     <TextBlock 
         Height="100" 
         Width="250"
-        
         TextWrapping="Wrap"
         Background="Blue"
         Foreground="White" 
-        Text="{Binding Source=Name}" 
-        FontSize="20"/>
-    
-    <Button  Content="100" 
+        Text="{Binding Category.Name}" 
+        FontSize="20"
+    ></TextBlock>
+
+    <ListView Name="BtnsListView">
+        <Button  Content="{Binding Scores}" 
              Width="100" 
              FontSize="20"
              Background="White"
-             Click="Click100"/>
-    <Button  Content="200" 
+             Click="Click100"
+             DataContext="{Binding Current}"/>
+    </ListView>
+
+   
+    <!--<Button  Content="200" 
              Width="100" 
              FontSize="20"
-             Background="White"/>
+             Background="White"
+             Click="Click100"
+              DataContext="{Binding Current}"/>
     <Button  Content="300"  
              Width="100"
              FontSize="20"
-             Background="White"/>
+             Background="White"
+             Click="Click100"
+              DataContext="{Binding Current}"/>
     <Button  Content="400"  
              Width="100"
              FontSize="20"
-             Background="White"/>
+             Background="White"
+             Click="Click100"
+              DataContext="{Binding Current}"/>
     <Button  Content="500"  
              Width="100"
              FontSize="20"
-             Background="White"/>
+             Background="White"
+             Click="Click100"
+              DataContext="{Binding Current}"/>-->
 
 </StackPanel>

@@ -5,27 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
+        WindowState="Maximized"
+        WindowStyle="None"
         Title="MainWindow" Height="1080" Width="1920" Background="#003153">
 
 
-    
-    <StackPanel 
+
+    <DockPanel 
         Width="Auto"
-        Height="500"
-        Orientation="Horizontal" 
+        Height="Auto"
         Background="#003153"
         VerticalAlignment="Center"
         HorizontalAlignment="Center"
         >
 
+
+        <ListView 
+            Width="Auto" 
+            Height="Auto" 
+            Name="ListView" 
+            Background="Blue"
+            DockPanel.Dock="Top">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:Butns />
+
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        
+            <ListView 
+            Width="250" 
+            Height="Auto" 
+            Name="ListPlayers" 
+            Background="Blue"
+            DockPanel.Dock="Bottom">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:Players />
+                 </DataTemplate>
+            </ListView.ItemTemplate>
+           
+        </ListView>
         
         
-        <StackPanel
-            Name="BtnsStackPanel"
-            Background="#003153">
-            
-        </StackPanel> 
-    </StackPanel>
+    </DockPanel>
 
 
 
