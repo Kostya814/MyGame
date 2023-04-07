@@ -40,7 +40,7 @@ namespace MyGame
         {
             return $"Вопрос: {_question} " + $"Ответ: {_answer}";
         }
-        public int Skores
+        public int Scores
         { 
             get=> _skores;
             set => _skores = value;
