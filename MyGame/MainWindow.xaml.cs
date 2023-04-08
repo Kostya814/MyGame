@@ -54,7 +54,6 @@ namespace MyGame
                 new Question("Вопрос","asdasd",new Category("О Нарковтиках")),
                 new Question("Дитя","asdasd",new Category("О Нарковтиках")),
             };
-            
             Sort();
             InitializeComponent();
 

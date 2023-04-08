@@ -10,23 +10,29 @@ namespace MyGame
     /// </summary>
     public partial class Butns : StackPanel
     {
-        public MainWindow parent;
+        public MainWindow parent = (MyGame.MainWindow)App.Current.MainWindow;
         public Butns()
         {         
             InitializeComponent();
             if (parent == null) return;
             var list = parent.ListView.ItemsSource.Cast<Question>().ToList();
+            foreach ( var item in list )
+            {
+                MessageBox.Show(item.Scores.ToString());
+            }
             BtnsListView.ItemsSource = list;
         }
         private void Click100(object sender, RoutedEventArgs e)
         {
-            
             var btn = sender as Button;
             if (btn == null) return;
             int point = Convert.ToInt32(btn.Content);
             MessageBox.Show(btn.DataContext.ToString());
+            DialogWindow dialog = new DialogWindow();
+            dialog.Owner = Application.Current.MainWindow;
+            dialog.Show();
 
-            
+
         }
        
             
