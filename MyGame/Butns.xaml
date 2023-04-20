@@ -13,43 +13,44 @@
         TextWrapping="Wrap"
         Background="Blue"
         Foreground="White" 
-        Text="{Binding Category.Name}" 
+        Text="{Binding Name}" 
         FontSize="20"
     ></TextBlock>
 
-    <ListView Name="BtnsListView">
-        <Button  Content="{Binding Scores}" 
-             Width="100" 
-             FontSize="20"
-             Background="White"
-             Click="Click100"
-             DataContext="{Binding Current}"/>
-    </ListView>
+    <!--<ListView Name="BtnsListView">
+        
+    </ListView>-->
 
-   
-    <!--<Button  Content="200" 
+    <Button  
+             Content="100" 
              Width="100" 
              FontSize="20"
              Background="White"
              Click="Click100"
-              DataContext="{Binding Current}"/>
+             DataContext="{Binding }"/>
+    <Button  Content="200" 
+             Width="100" 
+             FontSize="20"
+             Background="White"
+             Click="Click100"
+             DataContext="{Binding}"/>
     <Button  Content="300"  
              Width="100"
              FontSize="20"
              Background="White"
              Click="Click100"
-              DataContext="{Binding Current}"/>
+             DataContext="{Binding}"/>
     <Button  Content="400"  
              Width="100"
              FontSize="20"
              Background="White"
              Click="Click100"
-              DataContext="{Binding Current}"/>
+             DataContext="{Binding}"/>
     <Button  Content="500"  
              Width="100"
              FontSize="20"
              Background="White"
              Click="Click100"
-              DataContext="{Binding Current}"/>-->
+             DataContext="{Binding}"/>
 
 </StackPanel>

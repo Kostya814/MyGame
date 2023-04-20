@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         WindowStyle="None"
-        Title="MainWindow" Height="1080" Width="1920" Background="#003153">
+        Title="Своя игра" Height="1080" Width="1920" Background="#003153">
 
 
 
@@ -18,25 +18,52 @@
         VerticalAlignment="Center"
         HorizontalAlignment="Center"
         >
-
-
         <ListView 
             Width="Auto" 
             Height="Auto" 
-            Name="ListView" 
+            Name="categoriesList" 
             Background="Blue"
             DockPanel.Dock="Top">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <local:Butns />
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock  
+                            Width="400" 
+                            FontSize="18"
+                            Height="100" Text="{Binding Name}"
+                            Background="Blue"/>
+                        <ListView 
+                                Width="Auto" 
+                                Height="Auto" 
+                                ItemsSource="{Binding qust}"
+                                Background="Blue">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" Background="Blue" />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                 <DataTemplate>
+                                        <Button 
+                                            Height="100" 
+                                            Width="100" 
+                                            Background="Aqua" 
+                                            Foreground="Black" 
+                                            FontSize="18"
+                                            Content="{Binding Scores}" 
+                                            Click="Button_Click"/>
+                                 </DataTemplate>
 
-
-                </DataTemplate>
+                                </ListView.ItemTemplate>
+                        </ListView>
+                        
+                    </StackPanel>
+                 </DataTemplate>
             </ListView.ItemTemplate>
 
         </ListView>
         
-            <ListView 
+        <ListView 
             Width="250" 
             Height="Auto" 
             Name="ListPlayers" 

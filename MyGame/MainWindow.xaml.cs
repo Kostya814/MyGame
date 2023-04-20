@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace MyGame
 {
@@ -9,7 +13,7 @@ namespace MyGame
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Question> Cat { get; set; }
+        private List<Category> Cat { get; set; }
         private List<Player> Players { get; set; }
         public MainWindow()
         {
@@ -20,60 +24,92 @@ namespace MyGame
                 new Player("Дима")
             };
             Players[0].Points = 100;
-           
 
-            Cat = new List<Question>()
+
+            Category Cat1 = new Category("Вопросы для взрослых");
+            Cat1.qust = new List<Question>()
             {
-                new Question("ASDasd","asdasd",new Category("Вопросы для взрослых")),
-                new Question("КАк дела ","asdasd",new Category("Вопросы для взрослых")),
-                new Question("What","asdasd",new Category("Вопросы для взрослых")),
-                new Question("Вопрос","asdasd",new Category("Вопросы для взрослых")),
-                new Question("Дитя","asdasd",new Category("Вопросы для взрослых")),
-
-                new Question("ASDasd","asdasd",new Category("О тебе")),
-                new Question("КАк дела ","asdasd",new Category("О тебе")),
-                new Question("What","asdasd",new Category("О тебе")),
-                new Question("Вопрос","asdasd",new Category("О тебе")),
-                new Question("Дитя","asdasd",new Category("О тебе")),
-
-                new Question("ASDasd","asdasd",new Category("Название предмета")),
-                new Question("КАк дела ","asdasd",new Category("Название предмета")),
-                new Question("What","asdasd",new Category("Название предмета")),
-                new Question("Вопрос","asdasd",new Category("Название предмета")),
-                new Question("Дитя","asdasd",new Category("Название предмета")),
-
-                new Question("ASDasd","asdasd",new Category("О детях")),
-                new Question("КАк дела ","asdasd",new Category("О детях")),
-                new Question("What","asdasd",new Category("О детях")),
-                new Question("Вопрос","asdasd",new Category("О детях")),
-                new Question("Дитя","asdasd",new Category("О детях")),
-
-                new Question("ASDasd","asdasd",new Category("О Нарковтиках")),
-                new Question("КАк дела ","asdasd",new Category("О Нарковтиках")),
-                new Question("What","asdasd",new Category("О Нарковтиках")),
-                new Question("Вопрос","asdasd",new Category("О Нарковтиках")),
-                new Question("Дитя","asdasd",new Category("О Нарковтиках")),
+                new Question("ASDasd","asdasd",Cat1),
+                new Question("КАк дела ","asdasd",Cat1),
+                new Question("What","asdasd",Cat1),
+                new Question("Вопрос","asdasd",Cat1),
+                new Question("Дитя","asdasd",Cat1)
             };
-            Sort();
+            Category Cat2 = new Category("Название предмета");
+            Cat2.qust = new List<Question>()
+            {
+                new Question("ASDasd","asdasd",Cat2),
+                new Question("КАк дела ","asdasd",Cat2),
+                new Question("What","asdasd",Cat2),
+                new Question("Вопрос","asdasd",Cat2),
+                new Question("Дитя","asdasd",Cat2)
+            };
+            Category Cat3 = new Category("О детях");
+            Cat3.qust = new List<Question>()
+            {
+                new Question("ASDasd","asdasd",Cat3),
+                new Question("КАк дела ","asdasd",Cat3),
+                new Question("What","asdasd",Cat3),
+                new Question("Вопрос","asdasd",Cat3),
+                new Question("Дитя","asdasd",Cat3)
+            };
+            Category Cat4 = new Category("О Наркотиках");
+            Cat4.qust = new List<Question>()
+            {
+                new Question("ASDasd","asdasd",Cat4),
+                new Question("КАк дела ","asdasd",Cat4),
+                new Question("What","asdasd",Cat4),
+                new Question("Вопрос","asdasd",Cat4),
+                new Question("Дитя","asdasd",Cat4)
+            };
+            Category Cat5 = new Category("О тебе");
+            Cat5.qust = new List<Question>()
+            {
+                new Question("ASDasd","asdasd",Cat5),
+                new Question("КАк дела ","asdasd",Cat5),
+                new Question("What","asdasd",Cat5),
+                new Question("Вопрос","asdasd",Cat5),
+                new Question("Дитя","asdasd",Cat5)
+            };
+            Cat = new List<Category>()
+            {
+                Cat1,Cat2,Cat3,Cat4,Cat5
+                
+
+                
+            };
+            
             InitializeComponent();
 
 
-            
-            ListView.ItemsSource = Cat;
+            ListPlayers.ItemsSource = Players;
+            categoriesList.ItemsSource = Cat;
         }
-        private List<Question> list1 { get; set; }
-        private List<Question> list2 { get; set; }
-        private List<Question> list3 { get; set; }
-        private List<Question> list4 { get; set; }
-        private List<Question> list5 { get; set; }
-        void Sort()
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            list1 = Cat.Where(u => u.Category.Name == "Вопросы для взрослых").ToList();
-            list2 = Cat.Where(u => u.Category.Name == "О тебе").ToList();
-            list3 = Cat.Where(u => u.Category.Name == "Название предмета").ToList();
-            list4 = Cat.Where(u => u.Category.Name == "О детях").ToList();
-            list5 = Cat.Where(u => u.Category.Name == "О Нарковтиках").ToList();
+            Button button = sender as Button;
+            if (button == null) return;
+
+            Question question = button.DataContext as Question;
+            if (question == null) return;
+            DialogWin dialogWin = new DialogWin(question);
+            question.IsAnswered = true;
+            dialogWin.Owner = this;
+            
+            
+            button.Background = new SolidColorBrush(Color.FromRgb(119, 161, 181));
+            if (dialogWin.ShowDialog() == true)
+            {
+                
+            }
+            else
+            { 
+            
+            }
+            
         }
+        
 
     }
 }

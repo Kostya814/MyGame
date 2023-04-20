@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    class Question
+    public class Question
     {
         private string _question;
         private string _answer;
         private bool _isAnswered;
         private int _skores;
-
         private Category _category;
         public Question(string question, string answer,Category category)
         { 
@@ -36,10 +35,7 @@ namespace MyGame
             set => _isAnswered = value; 
         }
 
-        public override string ToString()
-        {
-            return $"Вопрос: {_question} " + $"Ответ: {_answer}";
-        }
+        
         public int Scores
         { 
             get=> _skores;

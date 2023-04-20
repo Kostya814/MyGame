@@ -15,22 +15,19 @@ namespace MyGame
         {         
             InitializeComponent();
             if (parent == null) return;
-            var list = parent.ListView.ItemsSource.Cast<Question>().ToList();
-            foreach ( var item in list )
-            {
-                MessageBox.Show(item.Scores.ToString());
-            }
-            BtnsListView.ItemsSource = list;
+            Category cat = this.DataContext as Category;
+            //MessageBox.Show(cat.Name);    
+            
         }
         private void Click100(object sender, RoutedEventArgs e)
         {
             var btn = sender as Button;
             if (btn == null) return;
             int point = Convert.ToInt32(btn.Content);
-            MessageBox.Show(btn.DataContext.ToString());
-            DialogWindow dialog = new DialogWindow();
-            dialog.Owner = Application.Current.MainWindow;
-            dialog.Show();
+
+            //DialogWindow dialog = new DialogWindow();
+            //dialog.Owner = Application.Current.MainWindow;
+            //dialog.Show();
 
 
         }

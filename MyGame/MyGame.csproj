@@ -56,8 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Category.cs" />
-    <Compile Include="DialogWindow.xaml.cs">
-      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    <Compile Include="DialogWin.xaml.cs">
+      <DependentUpon>DialogWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Players.xaml.cs">
       <DependentUpon>Players.xaml</DependentUpon>
@@ -67,7 +67,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DialogWindow.xaml">
+    <Page Include="DialogWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
