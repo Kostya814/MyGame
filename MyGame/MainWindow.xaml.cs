@@ -81,7 +81,7 @@ namespace MyGame
             Update();
             categoriesList.ItemsSource = Cat;
         }
-        void Update()
+        void Update()//Длжно данные обновлять но что- то не так
         {
             DataContext = Players;
         }
@@ -102,11 +102,11 @@ namespace MyGame
             
             if (dialogWin.ShowDialog() == true)
             {
-                Players[1].Points += question.Scores;
+                Players[1].Points += question.Scores;//Добавляю Диме баллов за ответ
             }
             else
             {
-                Players[1].Points -= question.Scores;
+                Players[1].Points -= question.Scores;//Отнимаю Диме баллов за ответ
             }
             Update();
 
