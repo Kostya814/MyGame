@@ -21,6 +21,10 @@ namespace MyGame
             _skores = skores;
             _isAnswered = false;
         }
+        public string Answer
+        { 
+            get => _answer; 
+        }
         public Category Category 
         { 
             get => _category;  

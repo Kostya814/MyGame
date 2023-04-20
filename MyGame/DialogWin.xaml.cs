@@ -32,5 +32,10 @@ namespace MyGame
         {
             DialogResult = true;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(Question.Answer);
+        }
     }
 }

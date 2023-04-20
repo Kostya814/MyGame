@@ -15,13 +15,21 @@ using System.Windows.Shapes;
 namespace MyGame
 {
     /// <summary>
-    /// Логика взаимодействия для Players.xaml
+    /// Логика взаимодействия для AddPlayer.xaml
     /// </summary>
-    public partial class Players : StackPanel
+    public partial class AddPlayer : Window
     {
-        public Players()
+        public Player Player { get; }
+        public AddPlayer(Player player)
         {
             InitializeComponent();
+            Player = player;
+            DataContext = Player;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

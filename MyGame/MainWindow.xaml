@@ -19,10 +19,16 @@
     <DockPanel 
         Width="Auto"
         Height="Auto"
-        Background="#003153"
+        Background="Transparent"
         VerticalAlignment="Center"
         HorizontalAlignment="Center"
         >
+        <Button 
+            Content="Добавить игрока" 
+            DockPanel.Dock="Right" 
+            Height="50" 
+            Width="100"
+            Click="AddPlay"></Button>
         <ListView 
             Width="Auto" 
             Height="Auto" 
@@ -73,19 +79,19 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <ListBox 
+        <ListView 
             Width="1000" 
             Height="40" 
             Name="ListPlayers" 
             Background="AliceBlue"
             DockPanel.Dock="Bottom"
             ItemsSource="{Binding}">
-            <ListBox.ItemsPanel>
+            <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Background="White" />
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-            <ListBox.ItemTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Text="{Binding Name}"
@@ -103,9 +109,9 @@
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
+            </ListView.ItemTemplate>
 
-        </ListBox>
+        </ListView>
     </DockPanel>
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyGame
 {
-    class Player
+    public class Player
     {
         private string _name;
         private int _points;
@@ -25,6 +25,7 @@ namespace MyGame
         public string Name
         {
             get => _name;
+            set => _name = value;
         }
         public int Points
         { 

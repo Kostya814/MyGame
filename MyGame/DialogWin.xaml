@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
-        Title="Ответ на вопрос" Height="200" Width="400" ResizeMode="NoResize">
+        Title="Ответ на вопрос" Height="200" Width="420" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
             <GradientStop Color="White" Offset="0" />
@@ -37,7 +37,7 @@
             
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Name="QuestionText" Text="" />
+        <TextBlock Name="QuestionText" Text="" TextWrapping="Wrap"/>
         <StackPanel 
             HorizontalAlignment="Stretch" 
             Orientation="Horizontal" 
@@ -52,6 +52,11 @@
                 IsCancel="True" 
                 Margin="50,8,8,8">
                 Нет
+            </Button>
+            <Button
+                Margin="50,8,8,8"
+                Click="Button_Click">
+                Ответ
             </Button>
         </StackPanel>
     </Grid>
