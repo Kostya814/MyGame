@@ -13,12 +13,12 @@ namespace MyGame
         private bool _isAnswered;
         private int _skores;
         private Category _category;
-        public Question(string question, string answer,Category category)
+        public Question(string question, string answer,Category category, int skores)
         { 
             _question = question;
             _answer = answer;
             _category = category;
-            _skores = 100;
+            _skores = skores;
             _isAnswered = false;
         }
         public Category Category 

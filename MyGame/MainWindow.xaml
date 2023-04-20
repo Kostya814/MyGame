@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        WindowStyle="None"
-        Title="Своя игра" Height="1080" Width="1920" Background="#003153">
+        
+        
+        Title="Своя игра" Height="650" Width="Auto"  ResizeMode="NoResize">
 
-
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+            <GradientStop Color="White" Offset="0" />
+            <GradientStop Color="#002137" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
 
     <DockPanel 
         Width="Auto"
@@ -22,8 +27,14 @@
             Width="Auto" 
             Height="Auto" 
             Name="categoriesList" 
-            Background="Blue"
-            DockPanel.Dock="Top">
+            DockPanel.Dock="Top"
+            >
+            <ListView.Background>
+                <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0" />
+                    <GradientStop Color="#afdafc" Offset="1" />
+                </LinearGradientBrush>
+            </ListView.Background>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -31,15 +42,17 @@
                             Width="400" 
                             FontSize="18"
                             Height="100" Text="{Binding Name}"
-                            Background="Blue"/>
+                            Background="Transparent"/>
                         <ListView 
                                 Width="Auto" 
                                 Height="Auto" 
                                 ItemsSource="{Binding qust}"
-                                Background="Blue">
+                                Background="Transparent"
+                                >
+                            
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal" Background="Blue" />
+                                    <StackPanel Orientation="Horizontal" Background="Transparent" />
                                 </ItemsPanelTemplate>
                             </ListView.ItemsPanel>
                             <ListView.ItemTemplate>
@@ -47,7 +60,7 @@
                                         <Button 
                                             Height="100" 
                                             Width="100" 
-                                            Background="Aqua" 
+                                            Background="Transparent" 
                                             Foreground="Black" 
                                             FontSize="18"
                                             Content="{Binding Scores}" 
@@ -64,11 +77,16 @@
         </ListView>
         
         <ListView 
-            Width="250" 
-            Height="Auto" 
+            Width="1000" 
+            Height="40" 
             Name="ListPlayers" 
-            Background="Blue"
+            Background="AliceBlue"
             DockPanel.Dock="Bottom">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" Background="White" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <local:Players />

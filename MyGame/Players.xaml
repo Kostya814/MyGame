@@ -6,20 +6,18 @@
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
         Name="Player1" Height="Auto" Width="Auto"
-            Orientation="Vertical">
-
+            Orientation="Horizontal">
+        
     <TextBlock Text="{Binding Name}"
         Height="Auto" 
         Width="100"
-        HorizontalAlignment="Center"       
-        Background="White" 
+        HorizontalAlignment="Center"
         Foreground="Black">
      
     </TextBlock>
     <Label 
          Content="{Binding Points}" 
-         HorizontalAlignment="Center"
-         Background="White" 
+         HorizontalAlignment="Center" 
          Foreground="Black">
 
     </Label>
