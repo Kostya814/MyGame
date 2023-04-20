@@ -78,12 +78,12 @@ namespace MyGame
             };
             
             InitializeComponent();
-            Update();
+            ListPlayers.ItemsSource = Players;
             categoriesList.ItemsSource = Cat;
         }
         void Update()//Длжно данные обновлять но что- то не так
         {
-            DataContext = Players;
+            ListPlayers.DataContext = Players;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -108,6 +108,8 @@ namespace MyGame
             {
                 Players[1].Points -= question.Scores;//Отнимаю Диме баллов за ответ
             }
+            ListPlayers.ItemsSource = Players;
+            ListPlayers.Items.Refresh();
             Update();
 
             

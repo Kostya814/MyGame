@@ -95,12 +95,12 @@
                                 Foreground="Black">
 
                         </TextBlock>
-                        <Label 
-                            Content="{Binding Points}" 
+                        <TextBlock 
+                            Text="{Binding Points}" 
                             HorizontalAlignment="Center" 
                             Foreground="Black">
 
-                        </Label>
+                        </TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
