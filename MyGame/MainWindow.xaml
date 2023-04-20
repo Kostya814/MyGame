@@ -49,15 +49,14 @@
                                 ItemsSource="{Binding qust}"
                                 Background="Transparent"
                                 >
-                            
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <StackPanel Orientation="Horizontal" Background="Transparent" />
                                 </ItemsPanelTemplate>
                             </ListView.ItemsPanel>
                             <ListView.ItemTemplate>
-                                 <DataTemplate>
-                                        <Button 
+                                <DataTemplate>
+                                    <Button 
                                             Height="100" 
                                             Width="100" 
                                             Background="Transparent" 
@@ -65,37 +64,48 @@
                                             FontSize="18"
                                             Content="{Binding Scores}" 
                                             Click="Button_Click"/>
-                                 </DataTemplate>
+                                </DataTemplate>
 
-                                </ListView.ItemTemplate>
+                            </ListView.ItemTemplate>
                         </ListView>
-                        
-                    </StackPanel>
-                 </DataTemplate>
-            </ListView.ItemTemplate>
 
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        
-        <ListView 
+        <ListBox 
             Width="1000" 
             Height="40" 
             Name="ListPlayers" 
             Background="AliceBlue"
-            DockPanel.Dock="Bottom">
-            <ListView.ItemsPanel>
+            DockPanel.Dock="Bottom"
+            ItemsSource="{Binding}">
+            <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" Background="White" />
                 </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <local:Players />
-                 </DataTemplate>
-            </ListView.ItemTemplate>
-           
-        </ListView>
-        
-        
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="{Binding Name}"
+                            Height="Auto" 
+                            Width="100"
+                            HorizontalAlignment="Center"
+                                Foreground="Black">
+
+                        </TextBlock>
+                        <Label 
+                            Content="{Binding Points}" 
+                            HorizontalAlignment="Center" 
+                            Foreground="Black">
+
+                        </Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
     </DockPanel>
 
 

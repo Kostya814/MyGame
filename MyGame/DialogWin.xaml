@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
-        Title="Ответ на вопрос" Height="200" Width="400">
+        Title="Ответ на вопрос" Height="200" Width="400" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+            <GradientStop Color="White" Offset="0" />
+            <GradientStop Color="#afdafc" Offset="1" />
+        </LinearGradientBrush>
+    </Window.Background>
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="Margin" Value="8" />

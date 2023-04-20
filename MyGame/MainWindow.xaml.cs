@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -16,10 +17,10 @@ namespace MyGame
             Players = new List<Player>()
             {
                 new Player("Костя"),
-                new Player("Витя"),
-                new Player("Дима")
+                new Player("Дима"),
+                new Player("Слава")
             };
-            Players[0].Points = 100;
+            
 
 
             Category Cat1 = new Category("Вопросы для взрослых");
@@ -35,8 +36,8 @@ namespace MyGame
             Cat2.qust = new List<Question>()
             {
                 new Question("ASDasd","asdasd",Cat2,100),
-                new Question("КАк дела ","asdasd",Cat2, 100),
-                new Question("What","asdasd",Cat2, 100),
+                new Question("КАк дела ","asdasd",Cat2, 200),
+                new Question("What","asdasd",Cat2, 150),
                 new Question("Вопрос","asdasd",Cat2, 100),
                 new Question("Дитя","asdasd",Cat2, 100)
             };
@@ -67,6 +68,7 @@ namespace MyGame
                 new Question("Вопрос","asdasd",Cat5, 100),
                 new Question("Дитя","asdasd",Cat5, 100)
             };
+
             Cat = new List<Category>()
             {
                 Cat1,Cat2,Cat3,Cat4,Cat5
@@ -74,14 +76,15 @@ namespace MyGame
 
 
             };
-
+            
             InitializeComponent();
-
-
-            ListPlayers.ItemsSource = Players;
+            Update();
             categoriesList.ItemsSource = Cat;
         }
-
+        void Update()
+        {
+            DataContext = Players;
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
@@ -89,20 +92,25 @@ namespace MyGame
 
             Question question = button.DataContext as Question;
             if (question == null) return;
+
             DialogWin dialogWin = new DialogWin(question);
             question.IsAnswered = true;
             dialogWin.Owner = this;
 
             button.IsEnabled = false;
-            //button.Background = new SolidColorBrush(Color.FromRgb(119, 161, 181));
+
+            
             if (dialogWin.ShowDialog() == true)
             {
-
+                Players[1].Points += question.Scores;
             }
             else
             {
-
+                Players[1].Points -= question.Scores;
             }
+            Update();
+
+            
 
         }
 

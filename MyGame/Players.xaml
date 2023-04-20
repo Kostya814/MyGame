@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MyGame"
         mc:Ignorable="d"
         Name="Player1" Height="Auto" Width="Auto"
-            Orientation="Horizontal">
+        Orientation="Horizontal" DataContext="{Binding}">
         
     <TextBlock Text="{Binding Name}"
         Height="Auto" 
